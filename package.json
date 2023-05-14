@@ -41,6 +41,8 @@
     "@adonisjs/assembler": "^5.9.5",
     "@japa/preset-adonis": "^1.2.0",
     "@japa/runner": "^2.5.1",
+    "@types/auth0": "^3.3.2",
+    "@types/auth0-js": "^9.14.7",
     "@types/proxy-addr": "^2.0.0",
     "@types/source-map-support": "^0.5.6",
     "adonis-preset-ts": "^2.1.0",
@@ -55,8 +57,16 @@
     "youch-terminal": "^2.2.0"
   },
   "dependencies": {
+    "@adonisjs/auth": "^8.2.3",
     "@adonisjs/core": "^5.9.0",
+    "@adonisjs/lucid": "^18.3.0",
     "@adonisjs/repl": "^3.1.11",
+    "@adonisjs/session": "^6.4.0",
+    "auth0": "^3.4.0",
+    "auth0-js": "^9.20.2",
+    "luxon": "^3.3.0",
+    "mysql2": "^3.3.1",
+    "prisma": "^4.14.0",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.21"
