@@ -20,6 +20,9 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 import 'App/Controllers/Http/AuthController'
+import 'App/Controllers/Http/StoragesController'
+import 'App/Controllers/Http/FoldersController'
+import 'App/Controllers/Http/FilesController'
 
 Route.get('/', async () => {
   return { hello: 'world' }
