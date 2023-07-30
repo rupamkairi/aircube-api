@@ -22,6 +22,8 @@ export default class Folder extends BaseModel {
   @belongsTo(() => Folder)
   public folder: BelongsTo<typeof Folder>
 
+  // has many folder or file
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

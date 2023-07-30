@@ -3,6 +3,21 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Storage from 'App/Models/Storage'
 
 export default class StoragesController {
+  public async info({ response, auth }: HttpContextContract) {
+    let user = await auth.authenticate()
+    if (!user) return response.unauthorized()
+
+    console.log(user.id)
+
+    let found = await Storage.query()
+      .where({ userId: user.id })
+      .preload('folders')
+      .preload('files')
+      .first()
+
+    return response.status(200).json(found)
+  }
+
   public async setup({ response, auth }: HttpContextContract) {
     let user = await auth.authenticate()
     if (!user) return response.unauthorized()
@@ -29,6 +44,7 @@ export default class StoragesController {
 }
 
 Route.group(() => {
+  Route.get('', 'StoragesController.info').as('info')
   Route.post('', 'StoragesController.setup').as('setup')
   Route.patch('', 'StoragesController.upgrade').as('upgrade').prefix('/upgrade')
 })
